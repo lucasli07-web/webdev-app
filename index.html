@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KitchenFlow - Restaurant Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="min-h-screen bg-gray-100 p-6">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <header class="mb-8 flex items-center justify-between">
+                <div>
+                    <h1 class="text-4xl font-bold text-gray-900">KitchenFlow</h1>
+                    <p class="text-gray-600 mt-2">
+                        Restaurant sales, inventory, and ingredient cost tracking.
+                    </p>
+                </div>
+                <button id="generateReportBtn" class="bg-black text-white px-5 py-3 rounded-2xl shadow-md hover:scale-105 transition">
+                    Generate Report
+                </button>
+            </header>
+
+            <!-- Key Metrics -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Revenue Card -->
+                <div class="bg-white rounded-3xl shadow-md p-6">
+                    <h2 class="text-gray-500 text-sm">Today's Revenue</h2>
+                    <p class="text-3xl font-bold mt-2" id="todayRevenue">$0</p>
+                </div>
+
+                <!-- Ingredient Costs Card -->
+                <div class="bg-white rounded-3xl shadow-md p-6">
+                    <h2 class="text-gray-500 text-sm">Ingredient Costs</h2>
+                    <p class="text-3xl font-bold mt-2" id="ingredientCosts">$0</p>
+                </div>
+
+                <!-- Net Profit Card -->
+                <div class="bg-white rounded-3xl shadow-md p-6">
+                    <h2 class="text-gray-500 text-sm">Net Profit</h2>
+                    <p class="text-3xl font-bold mt-2" id="netProfit">$0</p>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Low Stock Alerts -->
+                <div class="bg-white rounded-3xl shadow-md p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-2xl font-semibold">Low Stock Alerts</h2>
+                        <span class="text-sm text-red-500 font-medium">
+                            Needs Attention
+                        </span>
+                    </div>
+
+                    <div class="space-y-4" id="lowStockContainer">
+                        <!-- Low stock items will be rendered here by JS -->
+                    </div>
+                </div>
+
+                <!-- Top Profitable Dishes -->
+                <div class="bg-white rounded-3xl shadow-md p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-2xl font-semibold">Top Profitable Dishes</h2>
+                        <span class="text-sm text-green-600 font-medium">
+                            Weekly Data
+                        </span>
+                    </div>
+
+                    <div class="space-y-4" id="topDishesContainer">
+                        <!-- Top dishes will be rendered here by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ingredient Cost Tracker -->
+            <div class="bg-white rounded-3xl shadow-md p-6 mt-8">
+                <h2 class="text-2xl font-semibold mb-4">Ingredient Cost Tracker</h2>
+
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="text-left border-b">
+                            <th class="py-3">Ingredient</th>
+                            <th class="py-3">Supplier</th>
+                            <th class="py-3">Current Cost</th>
+                            <th class="py-3">Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="costTrackerTable">
+                        <!-- Ingredient rows will be rendered here by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
